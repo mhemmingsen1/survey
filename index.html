@@ -3,12 +3,25 @@
 <head>
 <script>
   var params = new URLSearchParams(window.location.search);
+  
   var assignment1 = Math.floor(Math.random() * 14) + 1;
+  
+  var pairMate = assignment1 % 2 === 1 ? assignment1 + 1 : assignment1 - 1;
+  var available = [];
+  for (var i = 1; i <= 14; i++) {
+    if (i !== assignment1 && i !== pairMate) {
+      available.push(i);
+    }
+  }
+  var assignment2 = available[Math.floor(Math.random() * available.length)];
+  
   var url = 'https://hemminm.limesurvey.net/692999?lang=zh-Hant-TW' +
     '&assignment1=' + assignment1 +
+    '&assignment2=' + assignment2 +
     '&PROLIFIC_PID=' + (params.get('PROLIFIC_PID') || '') +
     '&STUDY_ID=' + (params.get('STUDY_ID') || '') +
     '&SESSION_ID=' + (params.get('SESSION_ID') || '');
+  
   window.location.href = url;
 </script>
 </head>
