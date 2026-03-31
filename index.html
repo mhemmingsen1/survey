@@ -4,20 +4,22 @@
 <script>
   var params = new URLSearchParams(window.location.search);
   
-  var assignment1 = Math.floor(Math.random() * 14) + 1;
-  
-  var pairMate = assignment1 % 2 === 1 ? assignment1 + 1 : assignment1 - 1;
-  var available = [];
-  for (var i = 1; i <= 14; i++) {
-    if (i !== assignment1 && i !== pairMate) {
-      available.push(i);
-    }
-  }
-  var assignment2 = available[Math.floor(Math.random() * available.length)];
+  var pair1 = Math.floor(Math.random() * 2) + 1;
+  var pair2 = Math.floor(Math.random() * 2) + 1;
+  var pair3 = Math.floor(Math.random() * 2) + 1;
+  var pair4 = Math.floor(Math.random() * 2) + 1;
+  var pair5 = Math.floor(Math.random() * 2) + 1;
+  var pair6 = Math.floor(Math.random() * 2) + 1;
+  var pair7 = Math.floor(Math.random() * 2) + 1;
   
   var url = 'https://hemminm.limesurvey.net/692999?lang=zh-Hant-TW' +
-    '&assignment1=' + assignment1 +
-    '&assignment2=' + assignment2 +
+    '&pair1=' + pair1 +
+    '&pair2=' + pair2 +
+    '&pair3=' + pair3 +
+    '&pair4=' + pair4 +
+    '&pair5=' + pair5 +
+    '&pair6=' + pair6 +
+    '&pair7=' + pair7 +
     '&PROLIFIC_PID=' + (params.get('PROLIFIC_PID') || '') +
     '&STUDY_ID=' + (params.get('STUDY_ID') || '') +
     '&SESSION_ID=' + (params.get('SESSION_ID') || '');
